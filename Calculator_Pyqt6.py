@@ -17,7 +17,6 @@ class GridCalculatorTab(QWidget):
         self.display = QLineEdit()
         self.display.setAlignment(Qt.AlignmentFlag.AlignRight)
         self.display.setReadOnly(True)
-        self.display.setText('0')
         self.display.setFont(QFont('Arial', 26))
         self.display.setFixedHeight(70)
         layout.addWidget(self.display)
@@ -60,7 +59,6 @@ class KombinasiCalculatorTab(QWidget):
         self.display = QLineEdit()
         self.display.setAlignment(Qt.AlignmentFlag.AlignRight)
         self.display.setReadOnly(True)
-        self.display.setText('0')
         self.display.setFont(QFont('Arial', 26))
         self.display.setFixedHeight(70)
         main_layout.addWidget(self.display)
@@ -108,9 +106,9 @@ class Calculator(QWidget):
         current = display.text()
 
         if button == 'AC':
-            display.setText('0')
+            display.setText('')
         elif button == 'Del':
-            display.setText(current[:-1] if len(current) > 1 else '0')
+            display.setText(current[:-1] if len(current) > 1 else '')
         elif button == '=':
             try:
                 result = eval(current.replace('x', '*'))
@@ -118,7 +116,7 @@ class Calculator(QWidget):
             except:
                 display.setText('Error')
         else:
-            if current == '0' and button != '.':
+            if current == '' and button != '.':
                 display.setText(button)
             else:
                 display.setText(current + button)
