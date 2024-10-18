@@ -116,10 +116,15 @@ class Calculator(QWidget):
             except:
                 display.setText('Error')
         else:
-            if current == '' and button != '.':
+            # Cek jika display menampilkan 'Error' dan input adalah angka
+            if current == 'Error' and button in '0123456789':
+                display.setText(button)
+            elif current == '' and button != '.':
                 display.setText(button)
             else:
-                display.setText(current + button)
+                # Jika bukan error, lanjutkan seperti biasa
+                if current != 'Error':
+                    display.setText(current + button)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
