@@ -1,4 +1,7 @@
-Project UTS Kalkulator Sederhana
+PROJECT UTS PEMORGRAMAN DESKTOP
+
+KALKUTATOR SEDERHANA
+
 Anggota Kelompok :
 
 1. 230411100045_Dani Subianto
