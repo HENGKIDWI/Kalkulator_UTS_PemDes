@@ -92,7 +92,7 @@ class Calculator(QWidget):
         self.initUI()
 
     def initUI(self):
-        self.setWindowTitle('Calculator')
+        self.setWindowTitle("Dani'i Calculator")
         self.setGeometry(600, 100, 400, 450)
         layout = QVBoxLayout()
         self.tab_widget = QTabWidget()
@@ -116,13 +116,11 @@ class Calculator(QWidget):
             except:
                 display.setText('Error')
         else:
-            # Cek jika display menampilkan 'Error' dan input adalah angka
             if current == 'Error' and button in '0123456789':
                 display.setText(button)
             elif current == '' and button != '.':
                 display.setText(button)
             else:
-                # Jika bukan error, lanjutkan seperti biasa
                 if current != 'Error':
                     display.setText(current + button)
 
